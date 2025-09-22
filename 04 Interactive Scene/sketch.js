@@ -3,9 +3,10 @@
 // 9/16/2025
 // create an interactive scene, where the displayed contents of the window will depend on user input.
 
-let backR = 0;
-let backG = 0;
-let backB = 0;
+let currentBack = 0
+let backR = 123;
+let backG = 156;
+let backB = 225;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -16,9 +17,9 @@ function draw() {
   background(backR, backG, backB);
   eniv();
   building0();
-
   mouseClicked();
-  mousePressed();
+
+  character();
 
 }
 
@@ -42,6 +43,10 @@ function building0() {
   fill(96, 96, 96);
   rect(0, 825, 2000, 100);
   quad(740, 825, 1150, 825, 980, 650, 875, 650);
+  //signture
+  fill(0);
+  textSize(24);
+  text("David Shi", 15, height * 9 / 10);
 }
 
 function eniv(){
@@ -51,6 +56,13 @@ function eniv(){
   rect(0, 615, 2000, 2000);
 }
 
+function character(){
+  stroke(0, 0, 0);
+  strokeWeight(3);
+  square(mouseX, mouseY, 100);
+  circle(mouseX + 25, mouseY + 25, 25);
+  circle(mouseX + 75, mouseY + 25, 25);
+}
 
 function mouseClicked() {
   let textX = ("X: " + mouseX);
@@ -66,23 +78,27 @@ function mouseClicked() {
 
 
 function mousePressed() {
-  if (mouseButton == CENTER) {
-    // Increase the red value if it's less than 153
-    if (backR < 153) {
-      backR = backR + 5;
-    }
-    // If red is 153, increase the green value if it's less than 204
-    else if (backR >= 153 && backG < 204) {
-      backG = backG + 5;
-    }
-    // If green is 204, increase the blue value if it's less than 255
-    else if (backG >= 204 && backB < 255) {
-      backB = backB + 5;
+  if (mouseButton === CENTER) {
+    if (currentBack === 0) {
+      backR = 255
+      backG = 0
+      backB = 0
+      currentBack = 1
+    } else if (currentBack === 1) {
+      backR = 123
+      backG = 123
+      backB = 255
+      currentBack = 2
+    } else if (currentBack === 2) {
+      backR = 255
+      backG = 75
+      backB = 225
+      currentBack = 3
+    } else if (currentBack === 3) {
+      backR = 255
+      backG = 100
+      backB = 50
+      currentBack = 0
     }
   }
-
-  // Ensure values stay within RGB bounds
-  backR = constrain(backR, 0, 255);
-  backG = constrain(backG, 0, 255);
-  backB = constrain(backB, 0, 255);
 }
