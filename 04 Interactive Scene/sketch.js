@@ -4,9 +4,10 @@
 // create an interactive scene, where the displayed contents of the window will depend on user input.
 
 let currentBack = 0
-let backR = 123;
-let backG = 156;
-let backB = 225;
+let backR = 123;// BACKGROUND COLOR
+let backG = 156;// BACKGROUND COLOR
+let backB = 225; // BACKGROUND COLOR
+let chara = 1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -18,7 +19,6 @@ function draw() {
   eniv();
   building0();
   mouseClicked();
-
   character();
 
 }
@@ -49,22 +49,31 @@ function building0() {
   text("David Shi", 15, height * 9 / 10);
 }
 
-function eniv(){
+function eniv(){ // ENIVORMENT
   fill(255, 153, 51); //Sun
   circle(925, 425, 200);
   fill(0, 204, 102); // ground
   rect(0, 615, 2000, 2000);
 }
 
-function character(){
+function character(){ // CHARACTER FOLLOWS THE MOUSE
+  if (chara === 0){
+    circle(mouseX+50, mouseY+50, 100);
+    fill(0, 0, 225);
+    circle(mouseX + 25, mouseY + 25, 25);
+    circle(mouseX + 75, mouseY + 25, 25);
+  }
+  if (chara === 1){
   stroke(0, 0, 0);
   strokeWeight(3);
   square(mouseX, mouseY, 100);
+  fill(0, 100, 0);
   circle(mouseX + 25, mouseY + 25, 25);
   circle(mouseX + 75, mouseY + 25, 25);
+  }
 }
 
-function mouseClicked() {
+function mouseClicked() { // THE X, Y OF THE MOUSE
   let textX = ("X: " + mouseX);
   let textY = ("Y: " + mouseY);
 
@@ -77,7 +86,7 @@ function mouseClicked() {
 }
 
 
-function mousePressed() {
+function mousePressed() { // PRESS MIDDLE MOUSE BUTTON, CHANGES THE COLOUR OF THE SUN
   if (mouseButton === CENTER) {
     if (currentBack === 0) {
       backR = 255
@@ -100,5 +109,13 @@ function mousePressed() {
       backB = 50
       currentBack = 0
     }
+  }
+}
+
+function keyPressed() { // PRESS ANY KEY CHANGE THE LOOKS OF THE CHARACTER
+  if (chara === 0) {
+    chara = 1;
+  } else {
+    chara = 0;
   }
 }
