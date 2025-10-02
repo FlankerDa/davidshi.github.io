@@ -11,6 +11,7 @@ function setup() {
 
 }
 function draw() {
+  frameRate(30);
   background(225);
   rectMode(CENTER);  //CHANGE THIS!!!!
   drawRectangles();
@@ -29,7 +30,7 @@ function drawRectangles(){
     rectHeight = random(50, 500);
 
     //perlin noise.. on your own.
-    rect(x, height/2, rectWidth, rectHeight);
+    rect(x, windowHeight, rectWidth, rectHeight);
 
   }
 }
