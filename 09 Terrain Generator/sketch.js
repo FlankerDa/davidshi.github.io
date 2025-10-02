@@ -3,35 +3,47 @@
 // 9/29/2025
 // Procedurally Generated 2D Terrain
 
+let rectHeight;
 let rectWidth = 5;
+let noiseStart = 0;
+let noiseSmooth = 0.02;
+let peakY = 0;
+let peakX = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
 
 }
+
 function draw() {
   frameRate(30);
   background(225);
-  rectMode(CENTER);  //CHANGE THIS!!!!
-  drawRectangles();
+  rectMode(CENTER);
+  generateTerrain();
 }
 
-function drawRectangles(){
-  //using a single loop, generate a bunch of side-to-side
-  //rectangles of varying height (pattern, random, noise)
-  let rectHeight;
-  fill(0);
+function generateTerrain(){
+  let peakY = 0;
+  let peakX = 0;
   for(let x = 0; x < width; x += rectWidth){
-    //option 1 - pattern
-    let rectHeight = x;
+    let noiseValue = noise(noiseStart + x *noiseSmooth);
+    rectHeight = noiseValue * windowHeight;
+    if (rectHeight > peak){
+      let peakY = rectHeight;
+      let peakX = x
+    }
+    rect(x, windowHeight - rectHeight, rectWidth, rectHeight);
+    
+  }
+  noiseStart += 0.01;
+}
 
-    //option 2 - random()
-    rectHeight = random(50, 500);
-
-    //perlin noise.. on your own.
-    rect(x, windowHeight, rectWidth, rectHeight);
-
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    rectWidth = max(1, rectWidth - 1);
+  }else if(keyCode === RIGHT_ARROW){
+    rectWidth++;
   }
 }
 
