@@ -7,8 +7,7 @@ let rectHeight;
 let rectWidth = 5;
 let noiseStart = 0;
 let noiseSmooth = 0.02;
-let peakY = 0;
-let peakX = 0;
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -26,18 +25,26 @@ function draw() {
 function generateTerrain(){
   let peakY = 0;
   let peakX = 0;
+  fill(225);
   for(let x = 0; x < width; x += rectWidth){
     let noiseValue = noise(noiseStart + x *noiseSmooth);
     rectHeight = noiseValue * windowHeight;
-    if (rectHeight > peak){
-      let peakY = rectHeight;
-      let peakX = x
+
+    if (rectHeight > peakY){
+      peakY = rectHeight;
+      peakX = x;
     }
-    rect(x, windowHeight - rectHeight, rectWidth, rectHeight);
+    rect(x, windowHeight, rectWidth, windowHeight - rectHeight);
     
   }
-  noiseStart += 0.01;
+  drawFlag(peakX, peakY);
 }
+
+function drawFlag(x, y){
+  fill(225, 0, 0);
+  rect(x, y, 10, 30);
+}
+
 
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
