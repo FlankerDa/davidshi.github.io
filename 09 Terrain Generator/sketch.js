@@ -50,8 +50,10 @@ function drawFlag(x, y){
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
     rectWidth = max(1, rectWidth - 1);
+    generateTerrain();
   }else if(keyCode === RIGHT_ARROW){
     rectWidth++;
+    generateTerrain();
   }
 }
 
