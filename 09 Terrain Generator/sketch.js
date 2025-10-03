@@ -4,7 +4,7 @@
 // Procedurally Generated 2D Terrain
 
 let rectHeight;
-let rectWidth = 5;
+let rectWidth = 1;
 let noiseStart = 0;
 let noiseSmooth = 0.02;
 
@@ -16,7 +16,6 @@ function setup() {
 }
 
 function draw() {
-  frameRate(30);
   background(225);
   rectMode(CENTER);
   generateTerrain();
@@ -37,7 +36,9 @@ function generateTerrain(){
     rect(x, windowHeight, rectWidth, windowHeight - rectHeight);
     
   }
+  noiseStart = noiseStart +0.05;
   drawFlag(peakX, peakY);
+
 }
 
 function drawFlag(x, y){
