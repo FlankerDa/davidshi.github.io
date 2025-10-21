@@ -34,19 +34,24 @@ class Vehicle{
     this.x = x;
     this.y = y;
     this.type = type;
+    this.color = fill(random(0,255),random(0,255),random(0,255));
+    this.direction = [];
+    this.xSpeed = random(1,5);
   }
 
   display(){
     this.type = str(random(0,1));
-    fill(random(0,255),random(0,255),random(0,255),);
-
-    if(type == 0){
-      rect(this.x, this.y, 10, 5);
-    }else{
-      rect(this.x,this.y, 20, 5);
-    }
   }
 
+  cars(){
+    fill(color);
+    rect(this.x, this.y, 10, 5);
+  }
+
+  trucks(){
+    fill(color);
+    rect(this.x,this.y, 20, 5);
+  }
 
   move(){
 
