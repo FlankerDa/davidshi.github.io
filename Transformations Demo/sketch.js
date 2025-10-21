@@ -36,10 +36,16 @@ function draw() {
   // scale(scaleAmount)
   // drawBasicGrid();
   // rectangleBlue();
-
-  circle(100, 100, 50, 50);
-  rotate(360)
   drawBasicGrid(150);
+
+  push();
+  translate(200,200);
+  circle(100, 100, 150);
+  line(0,0, 75,0)
+  rotate(360);
+  
+  pop();
+
 
 
 
