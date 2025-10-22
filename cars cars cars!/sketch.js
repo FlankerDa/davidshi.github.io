@@ -5,56 +5,93 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let myVehicle;
+let eastbound = [];
+let westbound = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  myVehicle = new Vehicle(width/2, height/2);
+  myVehicle = new Vehicle(random(0, windowWidth), random(windowHeight / 4 + 270, windowHeight / 4 + 480), int(random(0, 2)), random(-1, -5)) * 10; 
+  myVehicle1 = new Vehicle(random(0, windowWidth), random(windowHeight / 4, windowHeight / 4 + 200), int(random(0, 2)), random(1, 5)) * 10; 
 }
 
 function draw() {
-  fill(56,56,56);
+  background(255, 255, 255);
+  fill(56, 56, 56);
   drawRoad();
+
   myVehicle.display();
+  myVehicle.move();
+
+  myVehicle1.display();
+  myVehicle1.move();
 }
 
 function drawRoad() {
   noStroke();
-
-  rect(0, windowHeight/4, windowWidth, 500);
-  for (let x = 0; x < windowWidth; x += 100){
-
-    fill(255,255,255);
-    rect(x, windowHeight/2, 70, 10);
-    
+  rect(0, windowHeight/ 4, windowWidth, 500);
+  for (let x = 0; x < windowWidth; x += 100) {
+    fill(255, 255, 255);
+    rect(x, windowHeight /2, 70,10);
   }
 }
 
-class Vehicle{
-  constructor(x, y){
-    this.x = x;
+class Vehicle {
+  constructor(x, y, type, speed) {
+    this.x = x;  
     this.y = y;
+    this.c = color(random(255), random(255), random(255));
     this.type = type;
-    this.color = fill(random(0,255),random(0,255),random(0,255));
-    this.direction = [];
-    this.xSpeed = random(1,5);
+    this.xSpeed = speed;
   }
 
-  display(){
-    this.type = str(random(0,1));
+  move() {
+    if (this.x < windowHeight / 4+ 270){
+      this.x += this.xSpeed;
+    }else{
+      this.x += this.xSpeed;
+    }
+
+    if (this.x > windowWidth) {
+      this.x = -50;
+    }
   }
 
-  cars(){
-    fill(color);
-    rect(this.x, this.y, 10, 5);
+  speedUp() {
+    if (this.xSpeed < 15) {
+      this.xSpeed += 0.5;
+    }
   }
 
-  trucks(){
-    fill(color);
-    rect(this.x,this.y, 20, 5);
+  speedDown() {
+    if (this.xSpeed > 0) {
+      this.xSpeed -= 0.5;
+    }
   }
 
-  move(){
+  changeColor() {
+    this.c = color(random(255),random(255),random(255));
+  }
 
+  display() {
+    fill(this.c);
+    if (this.type === 0) {
+      this.drawCar();
+    } else if (this.type=== 1) {
+      this.drawTruck();
+    }
+  }
+
+  drawCar() {
+    rect(this.x, this.y, 50, 20);
+    fill(0,0,0);
+    rect(this.x+5, this.y-5, 10, 30);
+    rect(this.x+35, this.y-5, 10, 30);
+  }
+
+  drawTruck() {
+    rect(this.x, this.y, 120, 30);
+    fill(255,255,255);
+    rect(this.x-30, this.y+2.5, 30, 25);
   }
 }
-
