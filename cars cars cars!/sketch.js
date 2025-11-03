@@ -34,6 +34,12 @@ function draw() {
   }
 }
 
+function keyPressed(){
+  if(keyCode === "SPACE"){
+
+  }
+}
+
 function drawRoad() {
   noStroke();
   rect(0, windowHeight / 4, windowWidth, 500);
@@ -68,17 +74,16 @@ class Vehicle {
     rect(this.x, this.y, 50, 20);
     fill(0);
     rect(this.x + 5, this.y - 5, 10, 30);
-    rect(this.x + 35, this.y - 5, 10, 30);
+    rect(this.x + 35, this.y - 5, 10, 30); 
   }
 
   drawTruck() {
     rect(this.x, this.y, 120, 30);
     fill(255);
-    rect(this.x - 30, this.y + 2.5, 30, 25);
   }
 
   action() {
     this.move();
-    this.display();
+    this.display(); 
   }
 }
