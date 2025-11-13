@@ -3,6 +3,7 @@
 // NOv 6, 2025
 // Working with 2D Arrays, Visualizations
 
+
 let grid = [
   [0,  0,   255, 255, 0],
   [255, 255, 0,   255, 0],
@@ -12,6 +13,7 @@ let grid = [
 
 let squareSize = 225;
 const NUM_ROWS = 4; const NUM_COLS = 5;
+let showWin = false;
 
 function setup() {
   createCanvas(NUM_COLS * squareSize, NUM_ROWS * squareSize);
@@ -52,9 +54,7 @@ function mousePressed() {
     if (y < NUM_ROWS-1) flip(x, y+1);
   }
 
-  if (checkWin()) {
-    print("You Win");
-  }
+  showWin = checkWin();
 }
 
 function flip(x, y) {
@@ -85,4 +85,11 @@ function checkWin() {
 function draw() {
   background(220);
   renderGrid();
+  if (showWin) {
+    textSize(64);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    fill(0,255,0);
+    text("You Win", width / 2, height / 2);
+  }
 }
