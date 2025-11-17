@@ -1,9 +1,9 @@
 // 2D Array Basics
 // David Shi
-// NOv 6, 2025
-// Working with 2D Arrays, Visualizations
+// Nov 6, 2025
+// Working with 2D Arrays
 
-let grid = [
+let grid = [  // draws the grid
   [0,  0,   255, 255, 0],
   [255, 255, 0,   255, 0],
   [0,   0,   0,   255, 0],
@@ -11,55 +11,54 @@ let grid = [
   [0,   0,   0,   255, 0]
 ];
 
-let squareSize = 225;
-const NUM_ROWS = 5; 
-const NUM_COLS = 5;
-let showWin = false;
-let overlayPattern = 'cross';   // overlay + flip pattern
+let squareSize = 225; // size of the square
+const NUM_ROWS = 5; // how amny rows for the game
+const NUM_COLS = 5; // how amny colums for the game
+let showWin = false; // check win 
+let overlayPattern = 'cross';   // overlay
 
 function setup() {
-  createCanvas(NUM_COLS * squareSize, NUM_ROWS * squareSize);
-  randomizeGrid();
+  createCanvas(NUM_COLS * squareSize, NUM_ROWS * squareSize); // create the game board
+  randomizeGrid(); // random patterns
 }
 
-function renderGrid() {
+function renderGrid() { // function for drawing grid
   for (let y = 0; y < NUM_ROWS; y++) {
     for (let x = 0; x < NUM_COLS; x++) {
-      let fillColor = grid[y][x];
+      let fillColor = grid[y][x]; // white
       fill(fillColor);
-      stroke(0);
+      stroke(0); // lines sperate the square
       strokeWeight(2);
-      square(x * squareSize, y * squareSize, squareSize);
+      square(x * squareSize, y * squareSize, squareSize); // draws the square
     }
   }
 }
 
 
 function getCurrentY() {
-  let constrainedY = constrain(mouseY, 0, height - 1);
-  return floor(constrainedY / squareSize);
+  return Math.floor(mouseY / squareSize); //find mosue y
 }
 
 function getCurrentX() {
-  let constrainedX = constrain(mouseX, 0, width - 1);
-  return floor(constrainedX / squareSize);
+  return Math.floor(mouseX / squareSize); // find mouse x
 }
 
+
 function mousePressed() {
-  let x = getCurrentX();
+  let x = getCurrentX(); 
   let y = getCurrentY();
 
-  if(keyIsDown(SHIFT)) {
-    flip(x, y);
+  if(keyIsDown(SHIFT)) { // when holding down shift
+    flip(x, y); // flip the square
   } else {
-    if (overlayPattern === 'cross') {
+    if (overlayPattern === 'cross') { // if overlay is cross, then flip the square on the cross
       flip(x, y);
       if (y > 0) flip(x, y-1);
       if (x > 0) flip(x-1, y);
       if (x < NUM_COLS-1) flip(x+1, y);
       if (y < NUM_ROWS-1) flip(x, y+1);
     }
-    else if (overlayPattern === 'square') {
+    else if (overlayPattern === 'square') { // if overlay is square, then flip the square on the squre
       for (let j = -1; j <= 1; j++) {
         for (let i = -1; i <= 1; i++) {
           let nx = x + i;
@@ -72,15 +71,15 @@ function mousePressed() {
     }
   }
 
-  showWin = checkWin();
+  showWin = checkWin(); // check if won
 }
 
-function flip(x, y) {
+function flip(x, y) { // flip the colors for the overlay
   if(grid[y][x] === 0) grid[y][x] = 255;
   else grid[y][x] = 0;
 }
 
-function randomizeGrid() {
+function randomizeGrid() { // randomize the grid on the start
   for(let y = 0; y < NUM_ROWS; y++) {
     for (let x = 0; x < NUM_COLS; x++) {
       grid[y][x] = random() > 0.5 ? 0 : 255;
@@ -88,7 +87,7 @@ function randomizeGrid() {
   }
 }
 
-function checkWin() {
+function checkWin() { // check if won function
   let firstValue = grid[0][0];
   for(let y = 0; y < NUM_ROWS; y++) {
     for (let x = 0; x < NUM_COLS; x++) {
@@ -138,10 +137,10 @@ function keyPressed() { // when pressed space, overlay change types, 1: cross, 2
 
 function draw() {
   background(220);
-  renderGrid();
-  drawOverlay();
+  renderGrid(); // draw grid
+  drawOverlay(); // draw player overlay
 
-  if(showWin) {
+  if(showWin) { // if won display "you win" when all the grid are filled or removed.
     textSize(64);
     fill(0,255,0);
     textAlign(CENTER, CENTER);
