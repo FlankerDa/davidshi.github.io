@@ -100,6 +100,42 @@ function checkWin() {
   return true;
 }
 
+function drawOverlay() { // draws the overlay on the player mouse
+  let x = getCurrentX();
+  let y = getCurrentY();
+
+  fill(100, 100, 255, 150);
+  noStroke();
+
+  if (overlayPattern === 'cross') { // draw a cross shaped overlay on player mouse
+    highlightSquare(x, y);
+    highlightSquare(x-1, y);
+    highlightSquare(x+1, y);
+    highlightSquare(x, y-1);
+    highlightSquare(x, y+1);
+  }
+  else if (overlayPattern === 'square') {  // draw a square shaped overlay on player mouse
+    for (let j = -1; j <= 1; j++) {
+      for (let i = -1; i <= 1; i++) {
+        highlightSquare(x + i, y + j);
+      }
+    }
+  }
+}
+
+function highlightSquare(x, y) { // highlights the player overlay
+  if (x >= 0 && x < NUM_COLS && y >= 0 && y < NUM_ROWS) {
+    rect(x * squareSize, y * squareSize, squareSize, squareSize);
+  }
+}
+
+function keyPressed() { // when pressed space, overlay change types, 1: cross, 2: square
+  if (key === ' ') {
+    if (overlayPattern === 'cross') overlayPattern = 'square';
+    else overlayPattern = 'cross';
+  }
+}
+
 function draw() {
   background(220);
   renderGrid();
