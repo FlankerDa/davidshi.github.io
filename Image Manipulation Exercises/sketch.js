@@ -33,29 +33,29 @@ function draw() {
 
 
 
-// // Majority color
-// function drawCharacter(){
-//   //render an image using characters
-//   fill(255);
+// Majority color
+function drawCharacter(){
+  //render an image using characters
+  fill(255);
 
 
-//   for (let x = 0; x < width; x++) {
-//     for (let y = 0; y < height; y++) {
-//       let loc = (y * pilot.width + x) * 4;
-//       let r = pixels[loc];
-//       let g = pixels[loc + 1];
-//       let b = pixels[loc + 2];
-//       if (r >= g && r >= b) {
-//         setPixelColor(loc, 255, 0, 0); // Red
-//       } else if (g >= r && g >= b) {
-//         setPixelColor(loc, 0, 255, 0); // Green
-//       } else {
-//         setPixelColor(loc, 0, 0, 255); // Blue
-//       }
-//     }
-//   }
-//   updatePixels();
-// }
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      let loc = (y * pilot.width + x) * 4;
+      let r = pixels[loc];
+      let g = pixels[loc + 1];
+      let b = pixels[loc + 2];
+      if (r >= g && r >= b) {
+        setPixelColor(loc, 255, 0, 0); // Red
+      } else if (g >= r && g >= b) {
+        setPixelColor(loc, 0, 255, 0); // Green
+      } else {
+        setPixelColor(loc, 0, 0, 255); // Blue
+      }
+    }
+  }
+  updatePixels();
+}
 
 
 
