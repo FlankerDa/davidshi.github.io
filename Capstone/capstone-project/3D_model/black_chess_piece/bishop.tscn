@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl3y6a4rwk22w"]
+
+[ext_resource type="PackedScene" uid="uid://db77roxa23rbk" path="res://3D_model/white_chess_pieces/bishop.glb" id="1_2be84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqs5r"]
+albedo_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="bishop" instance=ExtResource("1_2be84")]
+
+[node name="bishop-v12" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fqs5r")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cicyulw78502o"]
+
+[ext_resource type="PackedScene" uid="uid://8wkbpaeb3nqw" path="res://3D_model/white_chess_pieces/pawn.glb" id="1_f14ny"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6oh4"]
+albedo_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="pawn" instance=ExtResource("1_f14ny")]
+
+[node name="pawn-v5" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o6oh4")

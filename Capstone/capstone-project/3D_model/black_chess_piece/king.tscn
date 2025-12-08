@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2o210bgp12na"]
+
+[ext_resource type="PackedScene" uid="uid://df734pu0rsjve" path="res://3D_model/white_chess_pieces/king.glb" id="1_gs1rm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycl4e"]
+albedo_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="king2" instance=ExtResource("1_gs1rm")]
+
+[node name="king" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ycl4e")

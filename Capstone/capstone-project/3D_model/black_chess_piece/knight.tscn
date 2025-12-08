@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ekpx1yyh868"]
+
+[ext_resource type="PackedScene" uid="uid://dlixv7rffntg8" path="res://3D_model/white_chess_pieces/knight.glb" id="1_owtlo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsuie"]
+albedo_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="knight" instance=ExtResource("1_owtlo")]
+
+[node name="knight-21-v3" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nsuie")
