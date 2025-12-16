@@ -219,677 +219,6 @@ data = PackedVector3Array(-30, 0.5, 30, 30, 0.5, 30, -30, -0.5, 30, 30, 0.5, 30,
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5xe63")
 
-[node name="Tile" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ub884")
-
-[node name="Tile3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile3" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_k1uay")
-
-[node name="Tile5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile5" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_5xe63")
-
-[node name="Tile7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile7" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile7/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cncdp")
-
-[node name="Tile2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile2" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_x1kjq")
-
-[node name="Tile4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile4" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uilov")
-
-[node name="Tile6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile6" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile6/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_hkwar")
-
-[node name="Tile8" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 0)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile8" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile8/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_v3mef")
-
-[node name="Tile17" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile17" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile17/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_106pw")
-
-[node name="Tile18" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile18" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile18/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_2gmds")
-
-[node name="Tile19" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile19" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile19/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_pgtlr")
-
-[node name="Tile20" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile20" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile20/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ui84m")
-
-[node name="Tile21" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile21" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile21/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cisuu")
-
-[node name="Tile22" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile22" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile22/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_q4pp4")
-
-[node name="Tile23" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile23" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile23/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uv1y5")
-
-[node name="Tile24" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 120)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile24" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile24/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_a2cmy")
-
-[node name="Tile33" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile33" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile33/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_yfajo")
-
-[node name="Tile34" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile34" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile34/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_58v6f")
-
-[node name="Tile35" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile35" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile35/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_3wwot")
-
-[node name="Tile36" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile36" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile36/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_n81d0")
-
-[node name="Tile37" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile37" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile37/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_0ovsl")
-
-[node name="Tile38" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile38" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile38/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6pigo")
-
-[node name="Tile39" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile39" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile39/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_j2pv1")
-
-[node name="Tile40" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 240)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile40" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile40/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_yhthb")
-
-[node name="Tile49" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile49" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile49/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_q3ci0")
-
-[node name="Tile50" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile50" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile50/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_o6ur0")
-
-[node name="Tile51" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile51" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile51/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_y6r1f")
-
-[node name="Tile52" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile52" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile52/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4pjgg")
-
-[node name="Tile53" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile53" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile53/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_qsosq")
-
-[node name="Tile54" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile54" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile54/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_duqov")
-
-[node name="Tile55" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile55" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile55/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_00lml")
-
-[node name="Tile56" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 360)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile56" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile56/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_x5k5l")
-
-[node name="Tile9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile9" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile9/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_2hbhl")
-
-[node name="Tile10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile10" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile10/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_d3ewl")
-
-[node name="Tile11" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile11" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile11/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_mtagp")
-
-[node name="Tile12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile12" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile12/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_kt6xs")
-
-[node name="Tile13" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile13" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile13/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_x75qr")
-
-[node name="Tile14" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile14" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile14/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_j05c6")
-
-[node name="Tile15" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile15" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile15/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7qbti")
-
-[node name="Tile16" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 60)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile16" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile16/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ute0g")
-
-[node name="Tile25" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile25" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile25/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ihvny")
-
-[node name="Tile26" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile26" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile26/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6v4rx")
-
-[node name="Tile27" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile27" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile27/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_pjvjb")
-
-[node name="Tile28" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile28" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile28/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fjq3f")
-
-[node name="Tile29" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile29" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile29/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_3y0t5")
-
-[node name="Tile30" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile30" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile30/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_p26py")
-
-[node name="Tile31" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile31" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile31/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ao34n")
-
-[node name="Tile32" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 180)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile32" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile32/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ku3jx")
-
-[node name="Tile41" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile41" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile41/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_jj37r")
-
-[node name="Tile42" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile42" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile42/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_87mtn")
-
-[node name="Tile43" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile43" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile43/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_emsji")
-
-[node name="Tile44" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile44" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile44/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8r7yx")
-
-[node name="Tile45" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile45" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile45/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_afkiv")
-
-[node name="Tile46" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile46" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile46/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_yumy6")
-
-[node name="Tile47" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile47" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile47/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_wviiu")
-
-[node name="Tile48" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 300)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile48" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile48/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_jpf4p")
-
-[node name="Tile57" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile57" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile57/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8hanb")
-
-[node name="Tile58" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile58" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile58/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7lrwh")
-
-[node name="Tile59" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile59" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile59/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8dqe4")
-
-[node name="Tile60" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile60" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile60/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_bupa1")
-
-[node name="Tile61" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile61" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile61/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_axnu1")
-
-[node name="Tile62" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile62" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile62/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_e8npu")
-
-[node name="Tile63" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile63" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile63/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_2n7mg")
-
-[node name="Tile64" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 420)
-mesh = SubResource("BoxMesh_j8ycx")
-surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Tile64" groups=["tiles"]]
-script = ExtResource("1_sg8f8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile64/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_831d0")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.99999994, -6.696973e-08, 5.6194278e-08, 0, 0.64278764, 0.7660444, -8.742277e-08, 0.76604444, -0.6427876, 210, 250, -100)
 
@@ -898,3 +227,740 @@ transform = Transform3D(0.8660254, -0.3535534, 0.3535534, 0, 0.7071068, 0.707106
 
 [node name="BoardManager" type="Node3D" parent="."]
 script = ExtResource("2_ub884")
+
+[node name="Tiles" type="Node3D" parent="."]
+
+[node name="Tile" type="MeshInstance3D" parent="Tiles"]
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ub884")
+
+[node name="Tile3" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile3" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k1uay")
+
+[node name="Tile5" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile5" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5xe63")
+
+[node name="Tile7" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile7" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_cncdp")
+
+[node name="Tile2" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile2" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x1kjq")
+
+[node name="Tile4" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile4" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uilov")
+
+[node name="Tile6" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile6" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hkwar")
+
+[node name="Tile8" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 0)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile8" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_v3mef")
+
+[node name="Tile17" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile17" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile17/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_106pw")
+
+[node name="Tile18" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile18" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile18/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2gmds")
+
+[node name="Tile19" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile19" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile19/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pgtlr")
+
+[node name="Tile20" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile20" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ui84m")
+
+[node name="Tile21" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile21" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile21/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_cisuu")
+
+[node name="Tile22" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile22" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile22/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q4pp4")
+
+[node name="Tile23" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile23" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile23/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uv1y5")
+
+[node name="Tile24" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 120)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile24" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile24/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_a2cmy")
+
+[node name="Tile33" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile33" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile33/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yfajo")
+
+[node name="Tile34" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile34" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile34/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_58v6f")
+
+[node name="Tile35" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile35" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile35/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3wwot")
+
+[node name="Tile36" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile36" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile36/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n81d0")
+
+[node name="Tile37" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile37" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile37/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0ovsl")
+
+[node name="Tile38" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile38" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile38/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6pigo")
+
+[node name="Tile39" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile39" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile39/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j2pv1")
+
+[node name="Tile40" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 240)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile40" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile40/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yhthb")
+
+[node name="Tile49" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile49" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile49/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q3ci0")
+
+[node name="Tile50" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile50" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile50/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_o6ur0")
+
+[node name="Tile51" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile51" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile51/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_y6r1f")
+
+[node name="Tile52" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile52" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile52/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4pjgg")
+
+[node name="Tile53" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile53" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile53/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qsosq")
+
+[node name="Tile54" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile54" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile54/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_duqov")
+
+[node name="Tile55" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile55" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile55/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_00lml")
+
+[node name="Tile56" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420, 0, 360)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile56" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile56/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5k5l")
+
+[node name="Tile9" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile9" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2hbhl")
+
+[node name="Tile10" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile10" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_d3ewl")
+
+[node name="Tile11" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile11" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mtagp")
+
+[node name="Tile12" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile12" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_kt6xs")
+
+[node name="Tile13" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile13" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x75qr")
+
+[node name="Tile14" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile14" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j05c6")
+
+[node name="Tile15" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile15" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile15/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7qbti")
+
+[node name="Tile16" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 60)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile16" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ute0g")
+
+[node name="Tile25" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile25" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile25/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ihvny")
+
+[node name="Tile26" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile26" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6v4rx")
+
+[node name="Tile27" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile27" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile27/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pjvjb")
+
+[node name="Tile28" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile28" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fjq3f")
+
+[node name="Tile29" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile29" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3y0t5")
+
+[node name="Tile30" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile30" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_p26py")
+
+[node name="Tile31" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile31" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ao34n")
+
+[node name="Tile32" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 180)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile32" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ku3jx")
+
+[node name="Tile41" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile41" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile41/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jj37r")
+
+[node name="Tile42" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile42" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile42/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_87mtn")
+
+[node name="Tile43" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile43" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile43/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_emsji")
+
+[node name="Tile44" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile44" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile44/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8r7yx")
+
+[node name="Tile45" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile45" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile45/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_afkiv")
+
+[node name="Tile46" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile46" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile46/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yumy6")
+
+[node name="Tile47" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile47" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile47/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wviiu")
+
+[node name="Tile48" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 300)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile48" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile48/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jpf4p")
+
+[node name="Tile57" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 419.932, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile57" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile57/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8hanb")
+
+[node name="Tile58" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 299.97086, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile58" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile58/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7lrwh")
+
+[node name="Tile59" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 180.0097, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile59" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile59/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8dqe4")
+
+[node name="Tile60" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60.04857, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile60" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile60/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bupa1")
+
+[node name="Tile61" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 359.95142, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile61" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile61/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_axnu1")
+
+[node name="Tile62" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 239.9903, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile62" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile62/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_e8npu")
+
+[node name="Tile63" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 120.02914, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile63" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile63/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2n7mg")
+
+[node name="Tile64" type="MeshInstance3D" parent="Tiles"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.067993164, 0, 420)
+mesh = SubResource("BoxMesh_j8ycx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sg8f8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tiles/Tile64" groups=["tiles"]]
+script = ExtResource("1_sg8f8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile64/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_831d0")
