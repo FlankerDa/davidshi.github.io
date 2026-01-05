@@ -1,7 +1,21 @@
-[gd_scene load_steps=72 format=3 uid="uid://d1o6fn5yc80e1"]
+[gd_scene load_steps=86 format=3 uid="uid://d1o6fn5yc80e1"]
 
 [ext_resource type="Script" uid="uid://bsvhxfxjwgwv8" path="res://Tile.gd" id="1_sg8f8"]
 [ext_resource type="Script" uid="uid://b3vxul262yjl8" path="res://Board_Manager.gd" id="2_ub884"]
+[ext_resource type="PackedScene" uid="uid://d31hfnqiob88o" path="res://Piece.tscn" id="3_5xe63"]
+[ext_resource type="PackedScene" uid="uid://dckhs8jl1e8m0" path="res://pieces/white/pawn.glb" id="3_uv1y5"]
+[ext_resource type="PackedScene" uid="uid://brgwgma3lckpo" path="res://pieces/white/rook.glb" id="4_a2cmy"]
+[ext_resource type="Script" uid="uid://db1r23r6c1uva" path="res://Piece.gd" id="4_cncdp"]
+[ext_resource type="PackedScene" uid="uid://dh2k6kwdqbiem" path="res://pieces/white/knight.glb" id="5_yfajo"]
+[ext_resource type="PackedScene" uid="uid://in5hbc2vsmo8" path="res://pieces/white/bishop.glb" id="6_58v6f"]
+[ext_resource type="PackedScene" uid="uid://bvlsb732q3gfk" path="res://pieces/white/queen.glb" id="7_3wwot"]
+[ext_resource type="PackedScene" uid="uid://dyrqjq3e6alhm" path="res://pieces/white/king.glb" id="8_n81d0"]
+[ext_resource type="PackedScene" uid="uid://dhwe11vcepbl7" path="res://pieces/black/pawn.glb" id="9_0ovsl"]
+[ext_resource type="PackedScene" uid="uid://0r5wbpa5tryr" path="res://pieces/black/rook.glb" id="10_6pigo"]
+[ext_resource type="PackedScene" uid="uid://dmpeppj70lod3" path="res://pieces/black/knight.glb" id="11_j2pv1"]
+[ext_resource type="PackedScene" uid="uid://djmjrb2hgkd8b" path="res://pieces/black/bishop.glb" id="12_yhthb"]
+[ext_resource type="PackedScene" uid="uid://bhqi8abm8gcx3" path="res://pieces/black/queen.glb" id="13_q3ci0"]
+[ext_resource type="PackedScene" uid="uid://fegkcbpejpqt" path="res://pieces/black/king.glb" id="14_o6ur0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ub884"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -227,6 +241,20 @@ transform = Transform3D(0.8660254, -0.3535534, 0.3535534, 0, 0.7071068, 0.707106
 
 [node name="BoardManager" type="Node3D" parent="."]
 script = ExtResource("2_ub884")
+piece_scene = ExtResource("3_5xe63")
+piece_root = NodePath("../Piece/Visual")
+white_pawn = ExtResource("3_uv1y5")
+white_rook = ExtResource("4_a2cmy")
+white_knight = ExtResource("5_yfajo")
+white_bishop = ExtResource("6_58v6f")
+white_queen = ExtResource("7_3wwot")
+white_king = ExtResource("8_n81d0")
+black_pawn = ExtResource("9_0ovsl")
+black_rook = ExtResource("10_6pigo")
+black_knight = ExtResource("11_j2pv1")
+black_bishop = ExtResource("12_yhthb")
+black_queen = ExtResource("13_q3ci0")
+black_king = ExtResource("14_o6ur0")
 
 [node name="Tiles" type="Node3D" parent="."]
 
@@ -964,3 +992,8 @@ script = ExtResource("1_sg8f8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile64/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_831d0")
+
+[node name="Piece" parent="." instance=ExtResource("3_5xe63")]
+script = ExtResource("4_cncdp")
+
+[node name="Visual" type="Node3D" parent="Piece"]
