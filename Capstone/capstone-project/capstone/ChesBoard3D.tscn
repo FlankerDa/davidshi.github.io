@@ -1,11 +1,10 @@
-[gd_scene load_steps=86 format=3 uid="uid://d1o6fn5yc80e1"]
+[gd_scene load_steps=85 format=3 uid="uid://d1o6fn5yc80e1"]
 
 [ext_resource type="Script" uid="uid://bsvhxfxjwgwv8" path="res://Tile.gd" id="1_sg8f8"]
 [ext_resource type="Script" uid="uid://b3vxul262yjl8" path="res://Board_Manager.gd" id="2_ub884"]
 [ext_resource type="PackedScene" uid="uid://d31hfnqiob88o" path="res://Piece.tscn" id="3_5xe63"]
 [ext_resource type="PackedScene" uid="uid://dckhs8jl1e8m0" path="res://pieces/white/pawn.glb" id="3_uv1y5"]
 [ext_resource type="PackedScene" uid="uid://brgwgma3lckpo" path="res://pieces/white/rook.glb" id="4_a2cmy"]
-[ext_resource type="Script" uid="uid://db1r23r6c1uva" path="res://Piece.gd" id="4_cncdp"]
 [ext_resource type="PackedScene" uid="uid://dh2k6kwdqbiem" path="res://pieces/white/knight.glb" id="5_yfajo"]
 [ext_resource type="PackedScene" uid="uid://in5hbc2vsmo8" path="res://pieces/white/bishop.glb" id="6_58v6f"]
 [ext_resource type="PackedScene" uid="uid://bvlsb732q3gfk" path="res://pieces/white/queen.glb" id="7_3wwot"]
@@ -242,7 +241,7 @@ transform = Transform3D(0.8660254, -0.3535534, 0.3535534, 0, 0.7071068, 0.707106
 [node name="BoardManager" type="Node3D" parent="."]
 script = ExtResource("2_ub884")
 piece_scene = ExtResource("3_5xe63")
-piece_root = NodePath("../Piece/Visual")
+piece_root = NodePath("../Pieces")
 white_pawn = ExtResource("3_uv1y5")
 white_rook = ExtResource("4_a2cmy")
 white_knight = ExtResource("5_yfajo")
@@ -255,6 +254,7 @@ black_knight = ExtResource("11_j2pv1")
 black_bishop = ExtResource("12_yhthb")
 black_queen = ExtResource("13_q3ci0")
 black_king = ExtResource("14_o6ur0")
+tile_size = 60.0
 
 [node name="Tiles" type="Node3D" parent="."]
 
@@ -993,7 +993,4 @@ script = ExtResource("1_sg8f8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile64/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_831d0")
 
-[node name="Piece" parent="." instance=ExtResource("3_5xe63")]
-script = ExtResource("4_cncdp")
-
-[node name="Visual" type="Node3D" parent="Piece"]
+[node name="Pieces" type="Node3D" parent="."]
