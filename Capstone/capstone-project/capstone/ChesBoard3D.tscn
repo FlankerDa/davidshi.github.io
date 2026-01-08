@@ -241,7 +241,7 @@ transform = Transform3D(0.8660254, -0.3535534, 0.3535534, 0, 0.7071068, 0.707106
 [node name="BoardManager" type="Node3D" parent="."]
 script = ExtResource("2_ub884")
 piece_scene = ExtResource("3_5xe63")
-piece_root = NodePath("../Pieces")
+piece_root = NodePath("Pieces")
 white_pawn = ExtResource("3_uv1y5")
 white_rook = ExtResource("4_a2cmy")
 white_knight = ExtResource("5_yfajo")
@@ -255,6 +255,8 @@ black_bishop = ExtResource("12_yhthb")
 black_queen = ExtResource("13_q3ci0")
 black_king = ExtResource("14_o6ur0")
 tile_size = 60.0
+
+[node name="Pieces" type="Node3D" parent="BoardManager"]
 
 [node name="Tiles" type="Node3D" parent="."]
 
@@ -992,5 +994,3 @@ script = ExtResource("1_sg8f8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile64/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_831d0")
-
-[node name="Pieces" type="Node3D" parent="."]

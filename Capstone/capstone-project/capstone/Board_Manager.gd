@@ -21,6 +21,9 @@ extends Node3D
 @export var tile_size: float = 1.0
 
 var selected_tile: Vector2i = Vector2i(-1, -1)
+var selected_pos: Vector2i = Vector2i(-1, -1)
+var current_turn: String = "white" # "white" or "black"
+
 
 func _ready():
 	_assign_grid_positions()
@@ -48,14 +51,26 @@ func _assign_grid_positions():
 		t.grid_pos = Vector2i(gx, gy)
 
 func _on_tile_clicked(pos: Vector2i) -> void:
-	print("Tile clicked at:", pos)
+	print("Tile clicked:", pos)
 
-	if selected_tile == Vector2i(-1, -1):
-		selected_tile = pos
-		print("Selected tile:", pos)
-	else:
-		print("Move from", selected_tile, "to", pos)
-		selected_tile = Vector2i(-1, -1)
+	if selected_pos == Vector2i(-1, -1):
+		if pieces.has(pos):
+			var p: Piece = pieces[pos]
+			if p.color != current_turn:
+				print("Not your turn. Current:", current_turn)
+				return
+			selected_pos = pos
+			print("Selected:", p.kind, p.color, "at", pos)
+			_highlight_selected(pos, true)
+		return
+	if pos == selected_pos:
+		_highlight_selected(selected_pos, false)
+		selected_pos = Vector2i(-1, -1)
+		print("Deselected")
+		return
+
+	_try_move(selected_pos, pos)
+
 		
 func _get_model(color: String, kind: String) -> PackedScene:
 	if color == "white":
@@ -68,12 +83,12 @@ func _get_model(color: String, kind: String) -> PackedScene:
 			"king": return white_king
 	else:
 		match kind:
-			"pawn": return white_pawn
-			"rook": return white_rook
-			"knight": return white_knight
-			"bishop": return white_bishop
-			"queen": return white_queen
-			"king": return white_king
+			"pawn": return black_pawn
+			"rook": return black_rook
+			"knight": return black_knight
+			"bishop": return black_bishop
+			"queen": return black_queen
+			"king": return black_king
 	return null
 	
 var pieces := {}
@@ -99,13 +114,13 @@ func _get_tile_world_pos(pos: Vector2i) -> Vector3:
 	return Vector3.ZERO
 
 func _spawn_starting_position() -> void:
-	# Clear old pieces if any
+
 	for k in pieces.keys():
 		var old = pieces[k]
 		if is_instance_valid(old):
 			old.queue_free()
 	pieces.clear()
-	# Pawns
+
 	for x in range(8):
 		_spawn_piece("white", "pawn", Vector2i(x, 1))
 		_spawn_piece("black", "pawn", Vector2i(x, 6))
@@ -132,7 +147,46 @@ func _spawn_starting_position() -> void:
 	_spawn_piece("black", "king", Vector2i(4, 7))
 
 
-			
+func _try_move(from: Vector2i, to: Vector2i) -> void:
+	if !pieces.has(from):
+		selected_pos = Vector2i(-1, -1)
+		return
+
+	var mover: Piece = pieces[from]
+
+	if pieces.has(to) and pieces[to].color == mover.color:
+		print("Blocked: own piece on", to)
+		return
+
+	_highlight_selected(from, false)
+
+	if pieces.has(to):
+		var captured: Piece = pieces[to]
+		print("Captured:", captured.kind, captured.color, "at", to)
+		captured.queue_free()
+		pieces.erase(to)
+
+	pieces.erase(from)
+	pieces[to] = mover
+
+	mover.grid_pos = to
+	mover.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
+
+	selected_pos = Vector2i(-1, -1)
+	current_turn = "black" if current_turn == "white" else "white"
+	print("Turn:", current_turn)
+
+
+func _highlight_selected(pos: Vector2i, on: bool) -> void:
+	for t in get_tree().get_nodes_in_group("tiles"):
+		if t.grid_pos == pos:
+			if on:
+				t.scale = Vector3(1.05, 1.05, 1.05)
+			else:
+				t.scale = Vector3(1.0, 1.0, 1.0)
+			return
+
+
 			
 			
 			
