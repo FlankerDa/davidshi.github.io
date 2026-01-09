@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var piece_scene: PackedScene
+@export var piece_scene: PackedScene #
 @export var piece_root: NodePath
 
 @export var white_pawn: PackedScene

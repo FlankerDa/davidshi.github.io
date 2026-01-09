@@ -14,3 +14,7 @@ config/name="capstone"
 run/main_scene="uid://d1o6fn5yc80e1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game_State="*res://GameState.gd"
