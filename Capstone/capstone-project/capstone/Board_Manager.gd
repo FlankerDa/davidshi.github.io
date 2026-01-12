@@ -161,14 +161,13 @@ func _try_move(from: Vector2i, to: Vector2i) -> void:
 	_highlight_selected(from, false)
 
 	if pieces.has(to):
-		var captured: Piece = pieces[to]
-		print("Captured:", captured.kind, captured.color, "at", to)
-		captured.queue_free()
-		pieces.erase(to)
+		var defender: Piece = pieces[to]
+		print("CAPTURE attempt", mover.kind, mover.color, "->", defender.kind, defender.color, "at", to)
+		_start_fps_duel(from, to)
+		return
 
 	pieces.erase(from)
 	pieces[to] = mover
-
 	mover.grid_pos = to
 	mover.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
 
@@ -186,7 +185,24 @@ func _highlight_selected(pos: Vector2i, on: bool) -> void:
 				t.scale = Vector3(1.0, 1.0, 1.0)
 			return
 
-
+func _start_fps_duel(from: Vector2i, to: Vector2i) -> void:
+	var attacker: Piece = pieces[from]
+	var defender: Piece = pieces[to]
+	
+	set_process_input(false)
+	
+	Game_State.start_capture({
+		"from": from,
+		"to": to,
+		"attacker_color": attacker.color,
+		"attacker_kind": attacker.kind,
+		"defender_color": defender.color,
+		"defender_kind": defender.kind,
+		"attacker_path": attacker.get_path(),
+		"defender_path": defender.get_path()
+	})
+	
+	get_tree().change_scene_to_file(Game_State.fps_scene_path)
 			
 			
 			
