@@ -27,11 +27,25 @@ var current_turn: String = "white" # "white" or "black"
 
 func _ready():
 	_assign_grid_positions()
-	_spawn_starting_position()
 
-	for n in get_tree().get_nodes_in_group("tiles"):
-		if n.has_signal("tile_clicked"):
-			n.tile_clicked.connect(_on_tile_clicked)
+	if Game_State.board_state.is_empty():
+		_spawn_starting_position()
+		Game_State.save_board_state(_export_board_state())
+	else:
+		_spawn_from_board_state(Game_State.board_state)
+		
+	_resolve_pending_capture_if_any()
+	
+func _spawn_from_board_state(state: Dictionary) -> void:
+	for k in pieces.keys():
+		if is_instance_valid(pieces[k]):
+			pieces[k].queue_free()
+	pieces.clear()
+	
+	for pos in state.keys():
+		var data = state[pos]
+		_spawn_piece(data["color"], data["kind"], pos)
+	
 
 func _assign_grid_positions():
 	var tiles := get_tree().get_nodes_in_group("tiles")
@@ -198,14 +212,47 @@ func _start_fps_duel(from: Vector2i, to: Vector2i) -> void:
 		"attacker_kind": attacker.kind,
 		"defender_color": defender.color,
 		"defender_kind": defender.kind,
-		"attacker_path": attacker.get_path(),
-		"defender_path": defender.get_path()
 	})
 	
+	Game_State.save_board_state(_export_board_state())
 	get_tree().change_scene_to_file(Game_State.fps_scene_path)
 			
+func _export_board_state() -> Dictionary:
+	var state := {}
+	for pos in pieces.keys():
+		var p = pieces[pos]
+		if is_instance_valid(p):
+			state[pos] = {"color": p.color, "kind": p.kind}
+	return state
 			
 			
 			
-			
-			
+func _resolve_pending_capture_if_any() -> void:
+	if not Game_State.has_pending_capture():
+		return
+
+	var result = Game_State.consume_pending_capture()
+	var data = result["pending_capture"]
+	var winner = result["duel_winner"]
+
+	var from: Vector2i = data["from"]
+	var to: Vector2i = data["to"]
+
+	if winner == "attacker":
+		if pieces.has(to) and is_instance_valid(pieces[to]):
+			pieces[to].queue_free()
+			pieces.erase(to)
+
+		if pieces.has(from):
+			var mover: Piece = pieces[from]
+			pieces.erase(from)
+			pieces[to] = mover
+			mover.grid_pos = to
+			mover.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
+
+	elif winner == "defender":
+		if pieces.has(from) and is_instance_valid(pieces[from]):
+			pieces[from].queue_free()
+			pieces.erase(from)
+
+	Game_State.save_board_state(_export_board_state())

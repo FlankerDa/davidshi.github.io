@@ -28,4 +28,5 @@ func _finish_duel(winner: String) -> void:
 	Game_State.set_capture_winner(winner)
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Game_State.set_capture_winner("attacker")
 	get_tree().change_scene_to_file(Game_State.board_scene_path)
