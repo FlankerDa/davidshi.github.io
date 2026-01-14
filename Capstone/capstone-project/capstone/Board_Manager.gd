@@ -22,11 +22,13 @@ extends Node3D
 
 var selected_tile: Vector2i = Vector2i(-1, -1)
 var selected_pos: Vector2i = Vector2i(-1, -1)
-var current_turn: String = "white" # "white" or "black"
+var current_turn: String = "white"
+
 
 
 func _ready():
 	_assign_grid_positions()
+	_connect_tiles()
 
 	if Game_State.board_state.is_empty():
 		_spawn_starting_position()
@@ -45,7 +47,15 @@ func _spawn_from_board_state(state: Dictionary) -> void:
 	for pos in state.keys():
 		var data = state[pos]
 		_spawn_piece(data["color"], data["kind"], pos)
-	
+
+func _connect_tiles() -> void:
+	var count := 0
+	for tile in get_tree().get_nodes_in_group("tiles"):
+		if tile.has_signal("tile_clicked"):
+			if not tile.tile_clicked.is_connected(_on_tile_clicked):
+				tile.tile_clicked.connect(_on_tile_clicked)
+				count += 1
+	print("connected tiles:", count)
 
 func _assign_grid_positions():
 	var tiles := get_tree().get_nodes_in_group("tiles")
@@ -162,33 +172,37 @@ func _spawn_starting_position() -> void:
 
 
 func _try_move(from: Vector2i, to: Vector2i) -> void:
+	print("TRY MOVE:", from, "->", to)
+
 	if !pieces.has(from):
+		print("ERROR: from tile has no piece.")
 		selected_pos = Vector2i(-1, -1)
 		return
 
 	var mover: Piece = pieces[from]
 
 	if pieces.has(to) and pieces[to].color == mover.color:
-		print("Blocked: own piece on", to)
+		print("BLOCKED: own piece on", to)
 		return
 
 	_highlight_selected(from, false)
 
-	if pieces.has(to):
-		var defender: Piece = pieces[to]
-		print("CAPTURE attempt", mover.kind, mover.color, "->", defender.kind, defender.color, "at", to)
+	if pieces.has(to) and pieces[to].color != mover.color:
 		_start_fps_duel(from, to)
+		selected_pos = Vector2i(-1, -1)
 		return
 
 	pieces.erase(from)
 	pieces[to] = mover
+
 	mover.grid_pos = to
 	mover.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
 
 	selected_pos = Vector2i(-1, -1)
-	current_turn = "black" if current_turn == "white" else "white"
-	print("Turn:", current_turn)
 
+	current_turn = "black" if current_turn == "white" else "white"
+	Game_State.save_board_state(_export_board_state())
+	print("TURN ->", current_turn)
 
 func _highlight_selected(pos: Vector2i, on: bool) -> void:
 	for t in get_tree().get_nodes_in_group("tiles"):
@@ -198,29 +212,34 @@ func _highlight_selected(pos: Vector2i, on: bool) -> void:
 			else:
 				t.scale = Vector3(1.0, 1.0, 1.0)
 			return
+			
 
 func _start_fps_duel(from: Vector2i, to: Vector2i) -> void:
+	if not pieces.has(from) or not pieces.has(to):
+		print("FPS Duel aborted: missing piece at from/to.")
+		return
+
 	var attacker: Piece = pieces[from]
 	var defender: Piece = pieces[to]
-	
-	set_process_input(false)
-	
+
 	Game_State.start_capture({
 		"from": from,
 		"to": to,
 		"attacker_color": attacker.color,
 		"attacker_kind": attacker.kind,
 		"defender_color": defender.color,
-		"defender_kind": defender.kind,
+		"defender_kind": defender.kind
 	})
-	
-	Game_State.save_board_state(_export_board_state())
-	get_tree().change_scene_to_file(Game_State.fps_scene_path)
+
+	var err := get_tree().change_scene_to_file(Game_State.fps_scene_path)
+	if err != OK:
+		print("Failed to change to FPS scene. Error code:", err, " path:", Game_State.fps_scene_path)
+
 			
 func _export_board_state() -> Dictionary:
 	var state := {}
 	for pos in pieces.keys():
-		var p = pieces[pos]
+		var p: Piece = pieces[pos]
 		if is_instance_valid(p):
 			state[pos] = {"color": p.color, "kind": p.kind}
 	return state
@@ -231,28 +250,43 @@ func _resolve_pending_capture_if_any() -> void:
 	if not Game_State.has_pending_capture():
 		return
 
-	var result = Game_State.consume_pending_capture()
-	var data = result["pending_capture"]
-	var winner = result["duel_winner"]
-
+	var data := Game_State.pending_capture
 	var from: Vector2i = data["from"]
 	var to: Vector2i = data["to"]
 
-	if winner == "attacker":
-		if pieces.has(to) and is_instance_valid(pieces[to]):
-			pieces[to].queue_free()
-			pieces.erase(to)
+	var winner: String = Game_State.capture_winner
+	var attacker_color: String = data["attacker_color"]
+	var defender_color: String = data["defender_color"]
 
-		if pieces.has(from):
-			var mover: Piece = pieces[from]
-			pieces.erase(from)
-			pieces[to] = mover
-			mover.grid_pos = to
-			mover.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
+	# Safety
+	if not pieces.has(from):
+		Game_State.clear_capture()
+		return
 
-	elif winner == "defender":
-		if pieces.has(from) and is_instance_valid(pieces[from]):
-			pieces[from].queue_free()
-			pieces.erase(from)
+	var attacker: Piece = pieces[from]
+	var defender: Piece = pieces.get(to, null)
 
-	Game_State.save_board_state(_export_board_state())
+	if winner != attacker_color:
+		if is_instance_valid(attacker):
+			attacker.queue_free()
+		pieces.erase(from)
+
+		current_turn = defender_color
+		print("Turn:", current_turn)
+
+		Game_State.clear_capture()
+		return
+
+	if defender != null and is_instance_valid(defender):
+		defender.queue_free()
+	pieces.erase(to)
+
+	pieces.erase(from)
+	pieces[to] = attacker
+	attacker.grid_pos = to
+	attacker.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
+
+	current_turn = defender_color
+	print("Turn:", current_turn)
+
+	Game_State.clear_capture()
