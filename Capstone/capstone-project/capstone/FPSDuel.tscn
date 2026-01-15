@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjrx6s54dov8s"]
+[gd_scene load_steps=8 format=3 uid="uid://cjrx6s54dov8s"]
 
 [ext_resource type="Script" uid="uid://duqxnkpp0yr27" path="res://FPSDuel.gd" id="1_2upek"]
 [ext_resource type="PackedScene" uid="uid://djqcp8mg7ajxd" path="res://FPSPlayer.tscn" id="2_cgrvk"]
@@ -8,13 +8,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_cgrvk"]
 size = Vector3(20, 0.2, 20)
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_cgrvk"]
+
 [sub_resource type="Sky" id="Sky_cgrvk"]
+sky_material = SubResource("PhysicalSkyMaterial_cgrvk")
 
 [sub_resource type="Environment" id="Environment_3hr45"]
 background_mode = 2
 sky = SubResource("Sky_cgrvk")
 ambient_light_source = 3
-ambient_light_color = Color(0.41042238, 0.7149471, 0.82674843, 1)
+ambient_light_color = Color(0.101199724, 0.73165345, 0.92334765, 1)
+reflected_light_source = 2
+sdfgi_enabled = true
+sdfgi_energy = 0.1
 
 [node name="FPSDuel" type="Node3D"]
 script = ExtResource("1_2upek")
