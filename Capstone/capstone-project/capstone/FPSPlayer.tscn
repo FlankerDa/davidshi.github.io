@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://djqcp8mg7ajxd"]
+[gd_scene load_steps=3 format=3 uid="uid://djqcp8mg7ajxd"]
+
+[ext_resource type="Script" uid="uid://bs8xw1ahguw58" path="res://FPSPlayer.gd" id="1_8ip4f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w7uup"]
 
 [node name="FpsPlayer" type="CharacterBody3D"]
+script = ExtResource("1_8ip4f")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="GunRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_w7uup")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
