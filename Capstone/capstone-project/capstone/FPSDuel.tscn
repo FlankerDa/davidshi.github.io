@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://djqcp8mg7ajxd" path="res://FPSPlayer.tscn" id="2_cgrvk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2upek"]
+size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cgrvk"]
-size = Vector3(20, 0.2, 20)
+size = Vector3(50, 0.2, 50)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_cgrvk"]
 
@@ -32,6 +33,7 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_2upek")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48101807, 0, 0)
 shape = SubResource("BoxShape3D_cgrvk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -40,18 +42,32 @@ shape = SubResource("BoxShape3D_cgrvk")
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Crosshair" type="Control" parent="CanvasLayer/InfoLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/InfoLabel/Crosshair"]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 340.0
+offset_right = 664.0
+offset_bottom = 344.0
+
 [node name="AttackerSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15.593631)
 
 [node name="DefenderSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -18.782366)
 
 [node name="PlayerA" parent="." instance=ExtResource("2_cgrvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2130547, 1, 1.9772897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.327418, 1, 1.9772897)
 
 [node name="PlayerB" parent="." instance=ExtResource("2_cgrvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0134764, 1, 0)
-is_local_player = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.985935, 1, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)

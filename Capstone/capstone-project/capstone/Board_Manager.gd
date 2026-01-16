@@ -27,16 +27,21 @@ var current_turn: String = "white"
 
 
 func _ready():
+	set_process_input(true)
 	_assign_grid_positions()
 	_connect_tiles()
 
-	if Game_State.board_state.is_empty():
+	if not Game_State.get_board_state().is_empty():
+		_spawn_from_board_state(Game_State.get_board_state())
+		current_turn = Game_State.current_turn
+	else:
 		_spawn_starting_position()
 		Game_State.save_board_state(_export_board_state())
-	else:
-		_spawn_from_board_state(Game_State.board_state)
+		Game_State.current_turn = current_turn
 		
 	_resolve_pending_capture_if_any()
+	Game_State.save_board_state(_export_board_state())
+	Game_State.current_turn = current_turn
 	
 func _spawn_from_board_state(state: Dictionary) -> void:
 	for k in pieces.keys():
@@ -249,16 +254,17 @@ func _export_board_state() -> Dictionary:
 func _resolve_pending_capture_if_any() -> void:
 	if not Game_State.has_pending_capture():
 		return
+	if Game_State.capture_winner == "":
+		return
 
 	var data := Game_State.pending_capture
 	var from: Vector2i = data["from"]
 	var to: Vector2i = data["to"]
 
-	var winner: String = Game_State.capture_winner
 	var attacker_color: String = data["attacker_color"]
 	var defender_color: String = data["defender_color"]
+	var winner_team: String = Game_State.capture_winner
 
-	# Safety
 	if not pieces.has(from):
 		Game_State.clear_capture()
 		return
@@ -266,27 +272,22 @@ func _resolve_pending_capture_if_any() -> void:
 	var attacker: Piece = pieces[from]
 	var defender: Piece = pieces.get(to, null)
 
-	if winner != attacker_color:
-		if is_instance_valid(attacker):
-			attacker.queue_free()
+	if winner_team != attacker_color:
+		attacker.queue_free()
 		pieces.erase(from)
+	else:
+		if defender != null:
+			defender.queue_free()
+			pieces.erase(to)
 
-		current_turn = defender_color
-		print("Turn:", current_turn)
-
-		Game_State.clear_capture()
-		return
-
-	if defender != null and is_instance_valid(defender):
-		defender.queue_free()
-	pieces.erase(to)
-
-	pieces.erase(from)
-	pieces[to] = attacker
-	attacker.grid_pos = to
-	attacker.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
+		pieces.erase(from)
+		pieces[to] = attacker
+		attacker.grid_pos = to
+		attacker.global_position = _get_tile_world_pos(to) + Vector3(0, 1.0, 0)
 
 	current_turn = defender_color
-	print("Turn:", current_turn)
+
+	Game_State.save_board_state(_export_board_state())
+	Game_State.current_turn = current_turn
 
 	Game_State.clear_capture()

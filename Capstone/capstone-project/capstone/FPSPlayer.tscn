@@ -21,11 +21,17 @@ script = ExtResource("1_8ip4f")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="GunRay" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -50)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_w7uup")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_8ip4f")
+
+[node name="Tracer" type="MeshInstance3D" parent="."]
+
+[node name="GunRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01685381)
+target_position = Vector3(0, 0, -50)
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.11804545, 0.032962173)
